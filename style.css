@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 顯示控制 */
+.hide {
+    display: none;
+}
+
+/* 面板 */
+#container {
+    width: 40%;
+    min-width: 400px;
+    background-image: linear-gradient(to right bottom, #ededed, #d0cee2, #b1b0d8, #8f93ce, #6878c4);
+    border-radius: 20px;
+    box-shadow: inset 4px 4px 5px rgb(255, 255, 255, 0.8), inset -4px -4px 5px rgb(23, 0, 114, 0.5), 0 10px 20px #a28fb4;
+    margin: 20px auto;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+}
+
+/* 問題框框 */
+.question {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(248, 239, 239);
+    box-shadow: inset 2px 2px 4px rgba(128, 121, 175, 0.8), inset -2px -2px 4px rgb(198, 207, 238);
+    border-radius: 15px;
+    width: 90%;
+    height: 200px;
+    margin: 10px 20px;
+}
+
+/* 問題框框動畫 */
+.typing-text {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgb(28, 0, 72);
+    border-right: .05em solid;
+    animation: type 1.5s steps(9) infinite alternate, blink 0.5s infinite normal;
+}
+
+@keyframes type {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+
+    to {
+        border-color: #9e9e9e;
+    }
+}
+
+/* 答案選項 */
+#ansBox {
+    width: 90%;
+}
+
+.answer {
+    width: 100%;
+    background-color: rgb(248, 239, 239, 0.5);
+    box-shadow: inset 2px 2px 3px rgb(255, 255, 255, 0.8), inset -2px -2px 3px rgb(23, 0, 114, 0.5);
+    border-radius: 10px;
+    color: #374384;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.answer:hover {
+    background-color: rgb(248, 239, 239, 0.8);
+    color: #8481c5
+}
+
+.answer h3 {
+    letter-spacing: 2px;
+    margin: 10px auto;
+}
+
+.styA,
+.styB,
+.styD {
+    width: 90%;
+    margin: 16px 0px;
+    /* 寫在按鈕控制裡
+    display: flex; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.styC {
+    width: 90%;
+    margin: 4px 0 16px 0px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.styA *,
+.styB *,
+.styD * {
+    margin: 20px auto;
+}
+
+.styC h3 {
+    margin: 0 auto 20px auto;
+}
+
+.styA h3,
+.styB h3,
+.styC h3,
+.styD h3 {
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 2px #374384;
+}
+
+/* 回家的按鈕 */
+.BackBTN {
+    border-style: none;
+    background-image: linear-gradient(to right bottom, #bfcbff, #b1bffd, #a4b3fa, #97a8f7, #899cf4);
+    border-radius: 100px;
+    color: rgb(23, 0, 114);
+    font-size: large;
+    letter-spacing: 1px;
+    width: 65%;
+    padding: 10px;
+}
+
+.BackBTN:hover {
+    outline: none;
+    box-shadow: rgba(45, 30, 114, 0.5) 0px 0px 5px;
+    transition: box-shadow 0.15s ease-in;
+}
+
+/* 照片輪播 */
+.carouse {
+    margin: 10px auto 16px auto;
+    width: 220px;
+    height: 410px;
+    position: relative;
+}
+
+.carouse img {
+    display: block;
+    position: absolute;
+    width: 220px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.carouse img:nth-child(1) {
+    animation: slide 4.2s ease-in 0s normal infinite;
+}
+
+.carouse img:nth-child(2) {
+    animation: slide 4.2s ease-in 0.6s normal infinite;
+}
+
+.carouse img:nth-child(3) {
+    animation: slide 4.2s ease-in 1.2s normal infinite;
+}
+
+.carouse img:nth-child(4) {
+    animation: slide 4.2s ease-in 1.8s normal infinite;
+}
+
+.carouse img:nth-child(5) {
+    animation: slide 4.2s ease-in 2.4s normal infinite;
+}
+
+.carouse img:nth-child(6) {
+    animation: slide 4.2s ease-in 3s normal infinite;
+}
+
+.carouse img:nth-child(7) {
+    animation: slide 4.2s ease-in 3.6s normal infinite;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    16% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

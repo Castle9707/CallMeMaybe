@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call me Maybe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="Q" class="question">
+            <h2 class="typing-text">要不要講電話啦？</h2>
+        </div>
+        <div id="ansBox">
+            <div id="ans1" class="answer">
+                <h3>我願意</h3>
+            </div>
+            <div id="ans2" class="answer">
+                <h3>我不願意</h3>
+            </div>
+            <div id="ans3" class="answer">
+                <h3>我要看直播</h3>
+            </div>
+            <div id="ans4" class="answer">
+                <h3>我要練琴</h3>
+            </div>
+        </div>
+
+        <!-- 每頁新增項目 -->
+        <div id="sideA" class="styA hide">
+            <h3>你超棒！耶！愛你！</h3>
+            <h3>請不要讓葆葆等太久</h3>
+            <button id="BackBTN1" class="BackBTN">再玩一次</button>
+        </div>
+        <div id="sideB" class="styB hide">
+            <h3>你永遠不知道你錯過了什麼</h3>
+            <h3>\ 建議你重選 /</h3>
+            <button id="BackBTN2" class="BackBTN">點我</button>
+            <!-- 人生哪能重來 -->
+        </div>
+        <div id="sideC" class="styC hide">
+            <h3>看葆葆直播不好ㄇ</h3>
+            <!-- 輪播動畫 -->
+            <div class="carouse">
+                <img src="img/C001.jpg" alt="">
+                <img src="img/C002.jpg" alt="">
+                <img src="img/C003.jpg" alt="">
+                <img src="img/C004.jpg" alt="">
+                <img src="img/C005.jpg" alt="">
+                <img src="img/C006.jpg" alt="">
+                <img src="img/C007.jpg" alt="">
+            </div>
+            <button id="BackBTN3" class="BackBTN">請你選我</button>
+        </div>
+        <div id="sideD" class="styD hide">
+            <h3>- 請上繳過路費 -</h3>
+            <h3>[ 彈琴影片一支 ]</h3>
+            <button id="BackBTN4" class="BackBTN">交完才能返回，謝謝</button>
+        </div>
+    </div>
+</body>
+<script>
+    // 選項按鈕
+    ans1.addEventListener('click', function () {
+        Q.style.display = 'none';
+        ans2.style.display = 'none';
+        ans3.style.display = 'none';
+        ans4.style.display = 'none';
+        sideA.classList.toggle('hide');
+        sideA.style.display = 'flex';
+
+    });
+    ans2.addEventListener('click', function () {
+        Q.style.display = 'none';
+        ans1.style.display = 'none';
+        ans3.style.display = 'none';
+        ans4.style.display = 'none';
+        sideB.classList.toggle('hide');
+        sideB.style.display = 'flex';
+    });
+    ans3.addEventListener('click', function () {
+        Q.style.display = 'none';
+        ans1.style.display = 'none';
+        ans2.style.display = 'none';
+        ans4.style.display = 'none';
+        sideC.classList.toggle('hide');
+        sideC.style.display = 'flex';
+    });
+    ans4.addEventListener('click', function () {
+        Q.style.display = 'none';
+        ans1.style.display = 'none';
+        ans2.style.display = 'none';
+        ans3.style.display = 'none';
+        sideD.classList.toggle('hide');
+        sideD.style.display = 'flex';
+    });
+
+    // 返回按鈕：回到一開始的頁面，包含問句與四個選項
+    BackBTN1.addEventListener('click', function () {
+        sideA.classList.toggle('hide');
+        sideA.style.display = 'none';
+        Q.style.display = 'flex';
+        ans2.style.display = 'flex';
+        ans3.style.display = 'flex';
+        ans4.style.display = 'flex';
+    });
+    BackBTN2.addEventListener('click', function () {
+        if (BackBTN2.innerText === '點我') {
+            BackBTN2.innerText = '人生哪能重來';
+            BackBTN2.style.color = 'red';
+        } else {
+            sideB.classList.toggle('hide');
+            sideB.style.display = 'none';
+            Q.style.display = 'flex';
+            ans1.style.display = 'flex';
+            ans3.style.display = 'flex';
+            ans4.style.display = 'flex';
+            BackBTN2.innerText = '點我';
+            BackBTN2.style.color = 'rgb(23, 0, 114)';
+        }
+
+    });
+    BackBTN3.addEventListener('click', function () {
+        sideC.classList.toggle('hide');
+        sideC.style.display = 'none';
+        Q.style.display = 'flex';
+        ans1.style.display = 'flex';
+        ans2.style.display = 'flex';
+        ans4.style.display = 'flex';
+    });
+    BackBTN4.addEventListener('click', function () {
+        sideD.classList.toggle('hide');
+        sideD.style.display = 'none';
+        Q.style.display = 'flex';
+        ans1.style.display = 'flex';
+        ans2.style.display = 'flex';
+        ans3.style.display = 'flex';
+    });
+</script>
+
+</html>
